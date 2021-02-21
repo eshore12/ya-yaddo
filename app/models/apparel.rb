@@ -5,6 +5,7 @@ class Apparel < ApplicationRecord
 
   validates :brand, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
+  validates :photo, presence: true
 
-  has_many_attached :photos
+  has_one_attached :photo
 end

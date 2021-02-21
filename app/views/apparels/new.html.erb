@@ -12,7 +12,7 @@
     <%= simple_form_for [@hotel, @apparel] do |f| %>
       <%= f.input :brand %>
       <%= f.input :category, collection: Apparel::CATEGORIES, include_blank: false %>
-      <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+      <%= f.input :photo, as: :file %>
       <div class="button-div">
         <%= f.submit 'Add', class: "btn btn-ghost" %>
       </div>
