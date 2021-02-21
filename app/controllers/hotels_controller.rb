@@ -1,6 +1,6 @@
 class HotelsController < ApplicationController
   def index
-    @hotel = Hotel.all
+    @hotels = Hotel.all
   end
 
   def show
