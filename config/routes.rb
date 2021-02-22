@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     resources :hotels, only: [ :create, :index, :show, :new ] do
       resources :apparels, only: [ :new, :create ]
   end
-  resources :apparels, only: [ :destroy ]
+  resources :apparels, only: [ :destroy, :edit, :update ]
 end

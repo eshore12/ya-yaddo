@@ -1,0 +1,21 @@
+<div class="page">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
+    <div class="container">
+      <h1>Yaddo provides <strong>fashionable</strong> clothes for your special stay</h1>
+      <p>Clothes sharing for less waste and cleaner environment</p>
+    </div>
+  </div>
+    <div class="title-new">
+    <h1>Edit Clothes</h1>
+  </div>
+  <div class="simple-form">
+    <%= simple_form_for @apparel do |f| %>
+      <%= f.input :brand %>
+      <%= f.input :category, collection: Apparel::CATEGORIES, include_blank: false %>
+      <%= f.input :photo, as: :file %>
+      <div class="button-div">
+        <%= f.submit 'Update', class: "btn btn-ghost" %>
+      </div>
+    <% end %>
+  </div>
+</div>

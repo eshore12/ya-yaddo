@@ -1,6 +1,11 @@
 class HotelsController < ApplicationController
   def index
     @hotels = Hotel.all
+    @search = params["search"]
+    if @search.present?
+      @query = @search["name"]
+      @hotels = Hotel.where("name ILIKE ?", "%#{@query}%")
+    end
   end
 
   def show

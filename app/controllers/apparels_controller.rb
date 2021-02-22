@@ -15,6 +15,19 @@ class ApparelsController < ApplicationController
     end
   end
 
+  def edit
+    @apparel = Apparel.find(params[:id])
+  end
+
+  def update
+    @apparel = Apparel.find(params[:id])
+    if @apparel.update(apparel_params)
+      redirect_to hotel_path(@apparel.hotel)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @apparel = Apparel.find(params[:id])
     @apparel.destroy

@@ -1,0 +1,5 @@
+    <%= simple_form_for :search, url: root_path, method: :get, html: { class: 'form-inline' } do |f| %>
+      <div class="search-form-control form-group">
+      <%= f.input :name, intput_html: {value: ""} %>
+            <%= f.submit "Search", class: "btn btn-flat"%>
+            <% end %>
