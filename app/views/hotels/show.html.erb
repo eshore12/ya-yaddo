@@ -23,7 +23,7 @@
       <% @hotel.apparels.each do |apparel| %>
         <div class="card-trip">
         <% if apparel.photo.attached?%>
-                  <img src="<%= cl_image_path apparel.photo.key, height: 300, width: 400, resize: :fit %>" />
+                  <img src="<%= cl_image_path apparel.photo.key, height: 300, width: 400, resize: :scale %>" />
     <% else %>
       <img src="https://res.cloudinary.com/dqnfjaom7/image/upload/v1613913278/uniqlo_shirt_vtejc5.jpg" />
     <% end %>
