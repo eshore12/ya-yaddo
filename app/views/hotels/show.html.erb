@@ -22,18 +22,22 @@
     <div class="apparel-cards">
       <% @hotel.apparels.each do |apparel| %>
         <div class="card-trip">
-          <img src="https://res.cloudinary.com/dqnfjaom7/image/upload/v1613913278/uniqlo_shirt_vtejc5.jpg" />
-          <div class="card-trip-infos">
-            <h2><%= apparel.brand %></h2>
-            <p><%= apparel.category %></p>
-            <div class="delete">
-              <%= link_to apparel_path(apparel), method: :delete, class: 'card-remove-link', data: { confirm: "Are you sure you want to delete?" } do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+        <% if apparel.photo.attached?%>
+                  <img src="<%= cl_image_path apparel.photo.key, height: 300, width: 400, resize: :fit %>" />
+    <% else %>
+      <img src="https://res.cloudinary.com/dqnfjaom7/image/upload/v1613913278/uniqlo_shirt_vtejc5.jpg" />
+    <% end %>
+    <div class="card-trip-infos">
+      <h2><%= apparel.brand %></h2>
+      <p><%= apparel.category %></p>
+      <div class="delete">
+        <%= link_to apparel_path(apparel), method: :delete, class: 'card-remove-link', data: { confirm: "Are you sure you want to delete?" } do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
     </div>
   </div>
-  <%# redirect_to hotel_path(@apparel.hotel) %>
+<% end %>
+</div>
+</div>
+<%# redirect_to hotel_path(@apparel.hotel) %>
